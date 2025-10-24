@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.exception;
 
 public class InputValidationException extends RuntimeException {
 

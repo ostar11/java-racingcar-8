@@ -1,4 +1,9 @@
-package racingcar;
+package racingcar.application;
+
+import racingcar.domain.InformationDesk;
+import racingcar.domain.Race;
+import racingcar.io.InputReader;
+import racingcar.io.RaceInputDto;
 
 public class RaceApplication {
 

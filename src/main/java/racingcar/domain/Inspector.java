@@ -1,6 +1,9 @@
-package racingcar;
+package racingcar.domain;
 
 import java.util.Objects;
+import racingcar.exception.ErrorCode;
+import racingcar.exception.InputValidationException;
+import racingcar.io.RaceInputDto;
 
 public class Inspector {
 

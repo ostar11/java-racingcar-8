@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.exception;
 
 public enum ErrorCode {
 

@@ -1,4 +1,6 @@
-package racingcar;
+package racingcar.domain;
+
+import racingcar.io.RaceInputDto;
 
 public class InformationDesk {
 
