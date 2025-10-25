@@ -13,4 +13,16 @@ public class RaceScore {
     public static RaceScore of(String name, int position) {
         return new RaceScore(name, position);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public boolean isMaxScore(int maxScore) {
+        return position == maxScore;
+    }
 }

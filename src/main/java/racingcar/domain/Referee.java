@@ -12,4 +12,19 @@ public class Referee {
         List<RaceScore> raceScores = participants.getCurrentPositions();
         totalScore.put(attempt, raceScores);
     }
+
+    public RaceResult getResult(int lastPeriod) {
+        List<RaceScore> raceScores = totalScore.get(lastPeriod);
+
+        Integer maxScore = raceScores.stream()
+                .map(RaceScore::getPosition)
+                .reduce(0, Integer::max);
+
+        List<String> winners = raceScores.stream()
+                .filter(raceScore -> raceScore.isMaxScore(maxScore))
+                .map(RaceScore::getName)
+                .toList();
+
+        return new RaceResult(totalScore, winners);
+    }
 }

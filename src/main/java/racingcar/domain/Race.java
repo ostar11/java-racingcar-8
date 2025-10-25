@@ -15,12 +15,14 @@ public class Race {
         return new Race(participants, rule);
     }
 
-    public void start() {
+    public RaceResult start() {
         int attemptCount = rule.getAttemptCount();
 
         for (int i = 1; i <= attemptCount; i++) {
             participants.move();
             referee.saveResult(i, participants);
         }
+
+        return referee.getResult(attemptCount);
     }
 }
