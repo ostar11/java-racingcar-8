@@ -1,5 +1,6 @@
 package racingcar.domain;
 
+import camp.nextstep.edu.missionutils.Randoms;
 import java.util.Arrays;
 import java.util.List;
 import racingcar.exception.ErrorCode;
@@ -26,5 +27,12 @@ public class Participants {
         }
 
         return new Participants(cars);
+    }
+
+    public void move() {
+        for (Car car : cars) {
+            int randomNumber = Randoms.pickNumberInRange(0, 9);
+            car.move(randomNumber);
+        }
     }
 }

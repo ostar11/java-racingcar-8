@@ -20,4 +20,7 @@ public class Car {
         return new Car(name, 0);
     }
 
+    public void move(int randomNumber) {
+        if (randomNumber >= 4) position++;
+    }
 }

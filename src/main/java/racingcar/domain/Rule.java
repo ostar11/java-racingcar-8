@@ -21,4 +21,8 @@ public class Rule {
 
         return new Rule(attemptCount);
     }
+
+    public int getAttemptCount() {
+        return attemptCount;
+    }
 }

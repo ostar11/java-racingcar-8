@@ -13,5 +13,6 @@ public class RaceApplication {
     public void start() {
         RaceInputDto raceInputDto = inputReader.read();
         Race race = informationDesk.register(raceInputDto);
+        race.start();
     }
 }
