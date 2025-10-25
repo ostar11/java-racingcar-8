@@ -8,6 +8,7 @@ public class InformationDesk {
 
     public Race register(RaceInputDto raceInputDto) {
         inspector.check(raceInputDto);
+        Participants participants = Participants.from(raceInputDto.getParticipantsInput());
         return null;
     }
 }
