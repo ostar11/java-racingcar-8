@@ -18,9 +18,9 @@ public class Race {
     public void start() {
         int attemptCount = rule.getAttemptCount();
 
-        for (int i = 0; i < attemptCount; i++) {
+        for (int i = 1; i <= attemptCount; i++) {
             participants.move();
-            referee.saveResult(participants);
+            referee.saveResult(i, participants);
         }
     }
 }

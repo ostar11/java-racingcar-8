@@ -35,4 +35,10 @@ public class Participants {
             car.move(randomNumber);
         }
     }
+
+    public List<RaceScore> getCurrentPositions() {
+        return cars.stream()
+                .map(Car::getCurrentPosition)
+                .toList();
+    }
 }
