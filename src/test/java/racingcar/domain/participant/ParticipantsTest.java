@@ -1,10 +1,9 @@
 package racingcar.domain.participant;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.List;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import racingcar.domain.race.RaceRecord;
@@ -49,4 +48,16 @@ class ParticipantsTest {
         assertThat(raceScores).extracting(RaceScore::getPosition).containsOnly(0);
     }
 
+    @DisplayName("움직임 명령이 일어나면 참가자 위치는 0이나 1이다.")
+    @Test
+    void carIsOneOrZeroAfterMove() {
+        String[] participantNames = new String[]{"a", "ab", "abc"};
+        Participants participants = Participants.from(participantNames);
+
+        participants.move();
+
+        RaceRecord raceRecord = participants.getCurrentScores();
+        List<RaceScore> raceScores = raceRecord.getRaceScores();
+        assertThat(raceScores).extracting(RaceScore::getPosition).containsAnyOf(0, 1);
+    }
 }
