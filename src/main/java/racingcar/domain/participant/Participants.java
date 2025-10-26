@@ -1,10 +1,10 @@
 package racingcar.domain.participant;
 
-import camp.nextstep.edu.missionutils.Randoms;
 import java.util.Arrays;
 import java.util.List;
 import racingcar.domain.race.RaceRecord;
 import racingcar.domain.race.RaceScore;
+import racingcar.util.NumberGenerator;
 
 public class Participants {
 
@@ -24,7 +24,7 @@ public class Participants {
 
     public void move() {
         for (Car car : cars) {
-            int randomNumber = Randoms.pickNumberInRange(0, 9);
+            int randomNumber = NumberGenerator.generateRandomNumber();
             car.move(randomNumber);
         }
     }
