@@ -15,6 +15,13 @@ public class RaceResult {
         this.winners = winners;
     }
 
+    public static RaceResult of(int lastPeriod, RaceHistory raceHistory) {
+        Map<Integer, RaceRecord> roundRecords = raceHistory.getRoundRecords();
+        List<String> winners = raceHistory.findWinners(lastPeriod);
+
+        return new RaceResult(lastPeriod, roundRecords, winners);
+    }
+
     public Map<Integer, RaceRecord> getRaceHistory() {
         return raceHistory;
     }

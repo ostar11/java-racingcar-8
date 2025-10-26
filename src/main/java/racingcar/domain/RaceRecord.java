@@ -10,7 +10,7 @@ public class RaceRecord {
         this.raceScores = raceScores;
     }
 
-    public List<String> findWinners() {
+    public List<String> findRoundWinners() {
         int maxScore = getMaxScore();
 
         return raceScores.stream()
