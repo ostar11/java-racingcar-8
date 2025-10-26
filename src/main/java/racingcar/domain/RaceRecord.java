@@ -24,4 +24,8 @@ public class RaceRecord {
                 .map(RaceScore::getPosition)
                 .reduce(0, Integer::max);
     }
+
+    public List<RaceScore> getRaceScores() {
+        return raceScores;
+    }
 }
