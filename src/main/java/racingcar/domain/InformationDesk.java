@@ -8,8 +8,10 @@ public class InformationDesk {
 
     public Race register(RaceInputDto raceInputDto) {
         inspector.check(raceInputDto);
+
         Participants participants = Participants.from(raceInputDto.getParticipantsInput());
         Rule rule = Rule.from(raceInputDto.getAttemptCountInput());
+
         return Race.of(participants, rule);
     }
 }
