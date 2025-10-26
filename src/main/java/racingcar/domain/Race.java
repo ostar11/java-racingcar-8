@@ -16,13 +16,13 @@ public class Race {
     }
 
     public RaceResult start() {
-        int attemptCount = rule.getAttemptCount();
-
-        for (int i = 1; i <= attemptCount; i++) {
+        while (rule.isOngoing()) {
             participants.move();
-            referee.saveResult(i, participants);
+            rule.nextRound();
+            referee.saveResult(rule.getCurrentAttemptCount(), participants);
         }
 
-        return referee.getResult(attemptCount);
+        int totalAttemptCount = rule.getTotalAttemptCount();
+        return referee.getResult(totalAttemptCount);
     }
 }
