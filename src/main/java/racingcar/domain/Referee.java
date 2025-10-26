@@ -25,6 +25,6 @@ public class Referee {
                 .map(RaceScore::getName)
                 .toList();
 
-        return new RaceResult(totalScore, winners);
+        return new RaceResult(lastPeriod, totalScore, winners);
     }
 }

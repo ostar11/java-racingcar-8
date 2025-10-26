@@ -25,4 +25,13 @@ public class RaceScore {
     public boolean isMaxScore(int maxScore) {
         return position == maxScore;
     }
+
+    public String toView() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < position; i++) {
+            sb.append("-");
+        }
+        String position = sb.toString();
+        return name + " : " + position;
+    }
 }
