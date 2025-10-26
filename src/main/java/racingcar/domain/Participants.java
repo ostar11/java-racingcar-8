@@ -3,12 +3,8 @@ package racingcar.domain;
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.Arrays;
 import java.util.List;
-import racingcar.exception.ErrorCode;
-import racingcar.exception.InvalidAttributeException;
 
 public class Participants {
-
-    public static final String DELIMITER = ",";
 
     private final List<Car> cars;
 
@@ -16,15 +12,10 @@ public class Participants {
         this.cars = cars;
     }
 
-    public static Participants from(String participantsInput) {
-        String[] splitParticipants = participantsInput.split(DELIMITER);
-        List<Car> cars = Arrays.stream(splitParticipants)
+    public static Participants from(String[] participants) {
+        List<Car> cars = Arrays.stream(participants)
                 .map(Car::from)
                 .toList();
-
-        if (splitParticipants.length != cars.size()) {
-            throw new InvalidAttributeException(ErrorCode.DUPLICATE_CAR_NAME);
-        }
 
         return new Participants(cars);
     }
