@@ -10,8 +10,8 @@ public class RaceScore {
         this.position = position;
     }
 
-    public static RaceScore of(String name, int position) {
-        return new RaceScore(name, position);
+    public static RaceScore of(Car car) {
+        return new RaceScore(car.getName(), car.getPosition());
     }
 
     public String getName() {

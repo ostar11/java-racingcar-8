@@ -1,10 +1,9 @@
 package racingcar.io;
 
-import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import racingcar.domain.RaceRecord;
 import racingcar.domain.RaceResult;
-import racingcar.domain.RaceScore;
 
 public class OutputWriter {
 
@@ -17,14 +16,11 @@ public class OutputWriter {
         System.out.println("실행 결과");
 
         int attemptCount = result.getAttemptCount();
-        Map<Integer, List<RaceScore>> totalScore = result.getTotalScore();
+        Map<Integer, RaceRecord> raceHistory = result.getRaceHistory();
 
         for (int period = 1; period <= attemptCount; period++) {
-            List<RaceScore> raceScores = totalScore.get(period);
-            for (RaceScore raceScore : raceScores) {
-                System.out.println(raceScore.toView());
-            }
-            System.out.println();
+            RaceRecord raceRecord = raceHistory.get(period);
+            // 결과 출력
         }
     }
 

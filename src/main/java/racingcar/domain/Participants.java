@@ -36,9 +36,10 @@ public class Participants {
         }
     }
 
-    public List<RaceScore> getCurrentPositions() {
-        return cars.stream()
-                .map(Car::getCurrentPosition)
+    public RaceRecord getCurrentScores() {
+        List<RaceScore> raceScores = cars.stream()
+                .map(RaceScore::of)
                 .toList();
+        return new RaceRecord(raceScores);
     }
 }

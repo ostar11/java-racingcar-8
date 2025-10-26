@@ -26,7 +26,11 @@ public class Car {
         }
     }
 
-    public RaceScore getCurrentPosition() {
-        return RaceScore.of(name, position);
+    public String getName() {
+        return name;
+    }
+
+    public int getPosition() {
+        return position;
     }
 }

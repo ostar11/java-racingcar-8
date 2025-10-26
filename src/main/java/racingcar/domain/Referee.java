@@ -6,25 +6,17 @@ import java.util.Map;
 
 public class Referee {
 
-    private final Map<Integer, List<RaceScore>> totalScore = new HashMap<>();
+    private final Map<Integer, RaceRecord> raceHistory = new HashMap<>();
 
     public void saveResult(int attempt, Participants participants) {
-        List<RaceScore> raceScores = participants.getCurrentPositions();
-        totalScore.put(attempt, raceScores);
+        RaceRecord raceRecord = participants.getCurrentScores();
+        raceHistory.put(attempt, raceRecord);
     }
 
     public RaceResult getResult(int lastPeriod) {
-        List<RaceScore> raceScores = totalScore.get(lastPeriod);
+        RaceRecord lastRaceRecord = raceHistory.get(lastPeriod);
+        List<String> winners = lastRaceRecord.findWinners();
 
-        Integer maxScore = raceScores.stream()
-                .map(RaceScore::getPosition)
-                .reduce(0, Integer::max);
-
-        List<String> winners = raceScores.stream()
-                .filter(raceScore -> raceScore.isMaxScore(maxScore))
-                .map(RaceScore::getName)
-                .toList();
-
-        return new RaceResult(lastPeriod, totalScore, winners);
+        return new RaceResult(lastPeriod, raceHistory, winners);
     }
 }

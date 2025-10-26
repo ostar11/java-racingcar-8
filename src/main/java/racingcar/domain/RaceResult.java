@@ -6,24 +6,24 @@ import java.util.Map;
 public class RaceResult {
 
     private final int attemptCount;
-    private final Map<Integer, List<RaceScore>> totalScore;
+    private final Map<Integer, RaceRecord> raceHistory;
     private final List<String> winners;
 
-    public RaceResult(int attemptCount, Map<Integer, List<RaceScore>> totalScore, List<String> winners) {
+    public RaceResult(int attemptCount, Map<Integer, RaceRecord> raceHistory, List<String> winners) {
         this.attemptCount = attemptCount;
-        this.totalScore = totalScore;
+        this.raceHistory = raceHistory;
         this.winners = winners;
     }
 
-    public int getAttemptCount() {
-        return attemptCount;
-    }
-
-    public Map<Integer, List<RaceScore>> getTotalScore() {
-        return totalScore;
+    public Map<Integer, RaceRecord> getRaceHistory() {
+        return raceHistory;
     }
 
     public List<String> getWinners() {
         return winners;
+    }
+
+    public int getAttemptCount() {
+        return attemptCount;
     }
 }
