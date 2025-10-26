@@ -1,27 +1,17 @@
 package racingcar.domain;
 
-import java.util.Arrays;
-import racingcar.exception.ErrorCode;
-import racingcar.exception.InvalidAttributeException;
+import racingcar.ParticipantParser;
+import racingcar.ParticipantsValidator;
 
 public class ParticipantFactory {
 
-    public static final String PARTICIPANTS_DELIMITER = ",";
+    private final ParticipantsValidator validator = new ParticipantsValidator();
+    private final ParticipantParser parser = new ParticipantParser();
 
     public Participants build(String participantsInput) {
-        String[] participants = splitParticipants(participantsInput);
-        checkDuplicateParticipants(participants);
+        String[] participants = parser.splitParticipants(participantsInput);
+        validator.checkDuplicateParticipants(participants);
         return Participants.from(participants);
     }
 
-    private static String[] splitParticipants(String participantsInput) {
-        return participantsInput.split(PARTICIPANTS_DELIMITER);
-    }
-
-    private static void checkDuplicateParticipants(String[] participants) {
-        long participantsCount = Arrays.stream(participants).distinct().count();
-        if (participantsCount != participants.length) {
-            throw new InvalidAttributeException(ErrorCode.DUPLICATE_CAR_NAME);
-        }
-    }
 }
