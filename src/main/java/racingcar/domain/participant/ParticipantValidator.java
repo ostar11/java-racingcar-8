@@ -5,7 +5,7 @@ import racingcar.exception.ErrorCode;
 import racingcar.exception.InvalidAttributeException;
 import racingcar.validator.Validator;
 
-public class DuplicateValidator implements Validator<String[]> {
+public class ParticipantValidator implements Validator<String[]> {
 
     @Override
     public void check(String[] participants) {
