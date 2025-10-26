@@ -1,7 +1,4 @@
-package racingcar.domain;
-
-import racingcar.ParticipantParser;
-import racingcar.ParticipantsValidator;
+package racingcar.domain.participant;
 
 public class ParticipantFactory {
 

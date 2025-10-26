@@ -1,4 +1,6 @@
-package racingcar.domain;
+package racingcar.domain.race;
+
+import racingcar.domain.participant.Participants;
 
 public class Referee {
 

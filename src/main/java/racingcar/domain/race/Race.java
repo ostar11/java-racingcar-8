@@ -1,4 +1,7 @@
-package racingcar.domain;
+package racingcar.domain.race;
+
+import racingcar.domain.participant.Participants;
+import racingcar.domain.race.rule.Rule;
 
 public class Race {
 

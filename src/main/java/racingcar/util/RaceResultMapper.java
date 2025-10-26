@@ -2,9 +2,9 @@ package racingcar.util;
 
 import java.util.List;
 import java.util.Map;
-import racingcar.domain.RaceRecord;
-import racingcar.domain.RaceResult;
-import racingcar.domain.RaceScore;
+import racingcar.domain.race.RaceRecord;
+import racingcar.domain.race.RaceResult;
+import racingcar.domain.race.RaceScore;
 
 public class RaceResultMapper {
 

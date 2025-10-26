@@ -1,8 +1,8 @@
 package racingcar.application;
 
-import racingcar.domain.InformationDesk;
-import racingcar.domain.Race;
-import racingcar.domain.RaceResult;
+import racingcar.domain.reception.InformationDesk;
+import racingcar.domain.race.Race;
+import racingcar.domain.race.RaceResult;
 import racingcar.io.InputReader;
 import racingcar.io.OutputWriter;
 import racingcar.io.RaceInputDto;

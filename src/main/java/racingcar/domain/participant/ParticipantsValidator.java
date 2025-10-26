@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.domain.participant;
 
 import java.util.Arrays;
 import racingcar.exception.ErrorCode;

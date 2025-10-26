@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.domain.participant;
 
 public class ParticipantParser {
 

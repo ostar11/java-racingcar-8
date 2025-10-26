@@ -1,6 +1,6 @@
 package racingcar.io;
 
-import racingcar.domain.RaceResult;
+import racingcar.domain.race.RaceResult;
 import racingcar.util.RaceResultMapper;
 
 public class OutputWriter {

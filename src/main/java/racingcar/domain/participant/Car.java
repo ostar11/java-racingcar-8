@@ -1,4 +1,4 @@
-package racingcar.domain;
+package racingcar.domain.participant;
 
 import racingcar.exception.ErrorCode;
 import racingcar.exception.InvalidAttributeException;

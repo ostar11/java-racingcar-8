@@ -1,4 +1,4 @@
-package racingcar.domain;
+package racingcar.domain.reception;
 
 import java.util.Objects;
 import racingcar.exception.ErrorCode;

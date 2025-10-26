@@ -1,8 +1,10 @@
-package racingcar.domain;
+package racingcar.domain.participant;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.Arrays;
 import java.util.List;
+import racingcar.domain.race.RaceRecord;
+import racingcar.domain.race.RaceScore;
 
 public class Participants {
 

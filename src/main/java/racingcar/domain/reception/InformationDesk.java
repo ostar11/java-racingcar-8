@@ -1,6 +1,10 @@
-package racingcar.domain;
+package racingcar.domain.reception;
 
-import racingcar.RuleFactory;
+import racingcar.domain.race.rule.RuleFactory;
+import racingcar.domain.participant.ParticipantFactory;
+import racingcar.domain.participant.Participants;
+import racingcar.domain.race.Race;
+import racingcar.domain.race.rule.Rule;
 import racingcar.io.RaceInputDto;
 
 public class InformationDesk {
