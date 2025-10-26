@@ -5,6 +5,9 @@ import racingcar.exception.InvalidAttributeException;
 
 public class Car {
 
+    private static final int MAX_NAME_LENGTH = 5;
+    private static final int MIN_MOVABLE_NUMBER = 4;
+
     private String name;
     private int position;
 
@@ -14,14 +17,14 @@ public class Car {
     }
 
     public static Car from(String name) {
-        if (name.length() > 5 || name.isEmpty()) {
+        if (name.length() > MAX_NAME_LENGTH || name.isEmpty()) {
             throw new InvalidAttributeException(ErrorCode.INVALID_CAR_NAME);
         }
         return new Car(name, 0);
     }
 
-    public void move(int randomNumber) {
-        if (randomNumber >= 4) {
+    public void move(int number) {
+        if (number >= MIN_MOVABLE_NUMBER) {
             position++;
         }
     }
