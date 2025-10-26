@@ -14,9 +14,13 @@ public class RaceApplication {
     private final OutputWriter outputWriter = new OutputWriter();
 
     public void start() {
-        RaceInputDto raceInputDto = inputReader.read();
-        Race race = informationDesk.register(raceInputDto);
-        RaceResult result = race.start();
-        outputWriter.write(result);
+        try {
+            RaceInputDto raceInputDto = inputReader.read();
+            Race race = informationDesk.register(raceInputDto);
+            RaceResult result = race.start();
+            outputWriter.write(result);
+        } catch (RuntimeException e) {
+            throw new IllegalArgumentException(e.getMessage());
+        }
     }
 }
