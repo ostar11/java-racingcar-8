@@ -3,10 +3,12 @@ package racingcar.domain.participant;
 import java.util.Arrays;
 import racingcar.exception.ErrorCode;
 import racingcar.exception.InvalidAttributeException;
+import racingcar.validator.Validator;
 
-public class ParticipantsValidator {
+public class DuplicateValidator implements Validator<String[]> {
 
-    public void checkDuplicateParticipants(String[] participants) {
+    @Override
+    public void check(String[] participants) {
         long participantsCount = Arrays.stream(participants).distinct().count();
 
         if (participantsCount != participants.length) {
