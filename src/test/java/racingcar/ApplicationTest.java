@@ -1,7 +1,11 @@
 package racingcar;
 
 import camp.nextstep.edu.missionutils.test.NsTest;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
 import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
@@ -28,6 +32,29 @@ class ApplicationTest extends NsTest {
         assertSimpleTest(() ->
             assertThatThrownBy(() -> runException("pobi,javaji", "1"))
                 .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource(value = "provideWrongInput")
+    void exceptionTest(String participants, String attemptCount) {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException(participants, attemptCount))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
+    private static Stream<Arguments> provideWrongInput() {
+        return Stream.of(
+                Arguments.of("*,|", "1"),
+                Arguments.of("1,2", "1"),
+                Arguments.of("a , b ,c", "1"),
+                Arguments.of("a,a,b", "1"),
+                Arguments.of("abcdef,a,b", "1"),
+                Arguments.of(",|", "1"),
+                Arguments.of(" ", "1"),
+                Arguments.of("a,b,c", "-1"),
+                Arguments.of("a,b,c", "f")
         );
     }
 
