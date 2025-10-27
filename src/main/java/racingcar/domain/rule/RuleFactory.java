@@ -1,4 +1,4 @@
-package racingcar.domain.race.rule;
+package racingcar.domain.rule;
 
 public class RuleFactory {
 

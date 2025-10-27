@@ -1,7 +1,7 @@
 package racingcar.domain.race;
 
 import racingcar.domain.participant.Participants;
-import racingcar.domain.race.rule.Rule;
+import racingcar.domain.rule.Rule;
 
 public class Race {
 
