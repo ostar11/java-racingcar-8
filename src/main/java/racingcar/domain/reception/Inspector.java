@@ -12,8 +12,10 @@ public class Inspector {
 
     public void check(RaceInputDto raceInputDto) {
         String participantsInput = raceInputDto.getParticipantsInput();
+        String attemptCountInput = raceInputDto.getAttemptCountInput();
 
         checkInputIsEmpty(participantsInput);
+        checkInputIsEmpty(attemptCountInput);
         checkParticipantsFormat(participantsInput);
     }
 
@@ -23,8 +25,8 @@ public class Inspector {
         }
     }
 
-    private static void checkParticipantsFormat(String participantsInput) {
-        if (!Pattern.matches(REGEX, participantsInput)) {
+    private void checkParticipantsFormat(String input) {
+        if (!Pattern.matches(REGEX, input)) {
             throw new InputValidationException(ErrorCode.INVALID_PARTICIPANTS_FORMAT);
         }
     }
