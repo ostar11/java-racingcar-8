@@ -9,9 +9,15 @@ import racingcar.io.RaceInputDto;
 
 public class RaceApplication {
 
-    private final InputReader inputReader = new InputReader();
-    private final InformationDesk informationDesk = new InformationDesk();
-    private final OutputWriter outputWriter = new OutputWriter();
+    private final InputReader inputReader;
+    private final InformationDesk informationDesk;
+    private final OutputWriter outputWriter;
+
+    public RaceApplication(InputReader inputReader, InformationDesk informationDesk, OutputWriter outputWriter) {
+        this.inputReader = inputReader;
+        this.informationDesk = informationDesk;
+        this.outputWriter = outputWriter;
+    }
 
     public void start() {
         try {

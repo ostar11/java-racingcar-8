@@ -2,8 +2,13 @@ package racingcar.domain.participant;
 
 public class ParticipantFactory {
 
-    private final ParticipantValidator participantValidator = new ParticipantValidator();
-    private final ParticipantParser parser = new ParticipantParser();
+    private final ParticipantValidator participantValidator;
+    private final ParticipantParser parser;
+
+    public ParticipantFactory(ParticipantValidator participantValidator, ParticipantParser parser) {
+        this.participantValidator = participantValidator;
+        this.parser = parser;
+    }
 
     public Participants build(String participantsInput) {
         String[] participants = parser.splitParticipants(participantsInput);

@@ -11,7 +11,9 @@ import racingcar.exception.InvalidAttributeException;
 
 class ParticipantFactoryTest {
 
-    ParticipantFactory participantFactory = new ParticipantFactory();
+    ParticipantValidator validator = new ParticipantValidator();
+    ParticipantParser parser = new ParticipantParser();
+    ParticipantFactory participantFactory = new ParticipantFactory(validator, parser);
 
     @Test
     void buildParticipants() {

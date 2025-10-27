@@ -9,9 +9,15 @@ import racingcar.io.RaceInputDto;
 
 public class InformationDesk {
 
-    private final Inspector inspector = new Inspector();
-    private final ParticipantFactory participantFactory = new ParticipantFactory();
-    private final RuleFactory ruleFactory = new RuleFactory();
+    private final Inspector inspector;
+    private final ParticipantFactory participantFactory;
+    private final RuleFactory ruleFactory;
+
+    public InformationDesk(Inspector inspector, ParticipantFactory participantFactory, RuleFactory ruleFactory) {
+        this.inspector = inspector;
+        this.participantFactory = participantFactory;
+        this.ruleFactory = ruleFactory;
+    }
 
     public Race register(RaceInputDto raceInputDto) {
         inspector.check(raceInputDto);
