@@ -1,9 +1,9 @@
 package racingcar.domain.participant;
 
 import java.util.Arrays;
+import racingcar.common.validator.Validator;
 import racingcar.exception.ErrorCode;
 import racingcar.exception.InvalidAttributeException;
-import racingcar.common.validator.Validator;
 
 public class ParticipantValidator implements Validator<String[]> {
 

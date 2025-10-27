@@ -14,7 +14,7 @@ public class RaceResultMapper {
 
     public static String formatRecord(RaceResult result) {
         StringBuilder sb = new StringBuilder();
-        
+
         int attemptCount = result.getAttemptCount();
         Map<Integer, RaceRecord> raceHistory = result.getRaceHistory();
 

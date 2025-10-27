@@ -1,8 +1,8 @@
 package racingcar.domain.rule;
 
+import racingcar.common.validator.Validator;
 import racingcar.exception.ErrorCode;
 import racingcar.exception.InvalidAttributeException;
-import racingcar.common.validator.Validator;
 
 public class RuleValidator implements Validator<Integer> {
 
