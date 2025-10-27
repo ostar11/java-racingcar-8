@@ -11,15 +11,15 @@ public class RaceRecord {
     }
 
     public List<String> findRoundWinners() {
-        int maxScore = getMaxScore();
+        int maxScore = findMaxScore();
 
         return raceScores.stream()
-                .filter(raceScore -> raceScore.isMaxScore(maxScore))
+                .filter(raceScore -> raceScore.isSamePosition(maxScore))
                 .map(RaceScore::getName)
                 .toList();
     }
 
-    public int getMaxScore() {
+    public int findMaxScore() {
         return raceScores.stream()
                 .map(RaceScore::getPosition)
                 .reduce(0, Integer::max);
