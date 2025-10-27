@@ -15,7 +15,7 @@ class RuleValidatorTest {
     @ParameterizedTest
     @ValueSource(ints = {0, -1, 11})
     void numberOutOfRangeCannotPass(int wrongNumber) {
-        assertThatThrownBy(() -> ruleValidator.check(wrongNumber))
+        assertThatThrownBy(() -> ruleValidator.validate(wrongNumber))
                 .isInstanceOf(InvalidAttributeException.class)
                 .hasMessage(ErrorCode.INVALID_ATTEMPT_COUNT.getMessage());
     }
@@ -23,6 +23,6 @@ class RuleValidatorTest {
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
     void numberInRangeCanPass(int number) {
-        assertDoesNotThrow(() -> ruleValidator.check(number));
+        assertDoesNotThrow(() -> ruleValidator.validate(number));
     }
 }

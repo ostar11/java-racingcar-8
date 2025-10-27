@@ -15,7 +15,7 @@ class ParticipantValidatorTest {
     void duplicateStringArrayValidate() {
         String[] strArr = new String[]{"abc", "abc"};
 
-        Assertions.assertThatThrownBy(() -> participantValidator.check(strArr))
+        Assertions.assertThatThrownBy(() -> participantValidator.validate(strArr))
                 .isInstanceOf(InvalidAttributeException.class)
                 .hasMessage(ErrorCode.DUPLICATE_CAR_NAME.getMessage());
     }

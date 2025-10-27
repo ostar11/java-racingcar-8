@@ -12,7 +12,7 @@ public class RuleFactory {
 
     public Rule build(String attemptCountInput) {
         int attemptCount = parser.parse(attemptCountInput);
-        validator.check(attemptCount);
+        validator.validate(attemptCount);
 
         return Rule.from(attemptCount);
     }

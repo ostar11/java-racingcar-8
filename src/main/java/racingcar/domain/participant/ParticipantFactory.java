@@ -13,7 +13,7 @@ public class ParticipantFactory {
     public Participants build(String participantsInput) {
         String[] participants = parser.splitParticipants(participantsInput);
 
-        participantValidator.check(participants);
+        participantValidator.validate(participants);
         return Participants.from(participants);
     }
 
